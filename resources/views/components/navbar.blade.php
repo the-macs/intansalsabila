@@ -40,12 +40,6 @@
                 </div>
             </div>
 
-            {{-- Paket Tour --}}
-            <a href="{{ route('fe.tour-package') }}"
-                class="text-sm font-medium duration-200 rounded px-3 py-2 {{ request()->routeIs('fe.tour-package') ? 'bg-intan-secondary' : 'hover:bg-intan-secondary' }}">
-                Paket Tour
-            </a>
-
             {{-- Layanan --}}
             @php
                 // $isServiceActive = request()->routeIs('fe.packages.hajj') || request()->routeIs('fe.packages.umrah');
@@ -123,10 +117,10 @@
         x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95"
         x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75"
         x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95"
-        class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-intan-secondary shadow-lg md:hidden" x-cloak>
+        class="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-intan-secondary shadow-lg lg:hidden" x-cloak>
         <div class="flex justify-end p-4">
             <button @click="mobileMenuOpen = false"
-                class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-500">
+                class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-emerald-500 cursor-pointer">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -136,7 +130,7 @@
         <div class="grid gap-2 px-6 py-4">
             <a href="{{ route('fe.home') }}"
                 class="flex w-full items-center py-2 text-lg font-semibold {{ request()->routeIs('fe.home') ? 'text-emerald-600' : '' }}">
-                Home
+                Beranda
             </a>
             <a href="{{ route('fe.about-us') }}"
                 class="flex w-full items-center py-2 text-lg font-semibold {{ request()->routeIs('fe.about-us') ? 'text-emerald-600' : '' }}">
@@ -144,7 +138,9 @@
             </a>
 
             <div class="py-2">
-                <div class="text-lg font-semibold {{ $isHajjUmrahActive ? 'text-emerald-600' : '' }}">Packages</div>
+                <div class="text-lg font-semibold {{ request()->routeIs('fe.packages.*') ? 'text-emerald-600' : '' }}">
+                    Paket Haji/Umrah
+                </div>
                 <div class="ml-4 mt-2 grid gap-2">
                     <a href="{{ route('fe.packages.hajj') }}"
                         class="text-sm {{ request()->routeIs('fe.packages.hajj') ? 'text-emerald-600' : '' }}">
@@ -157,20 +153,50 @@
                 </div>
             </div>
 
-            <a href="{{ route('fe.activities.article') }}"
-                class="flex w-full items-center py-2 text-lg font-semibold {{ request()->routeIs('fe.activities.article') ? 'text-emerald-600' : '' }}">
-                Artikel
-            </a>
-            <a href="{{ route('fe.activities.gallery') }}"
-                class="flex w-full items-center py-2 text-lg font-semibold {{ request()->routeIs('fe.activities.gallery') ? 'text-emerald-600' : '' }}">
-                Galeri
-            </a>
+            <div class="py-2">
+                <div class="text-lg font-semibold {{ request()->routeIs('fe.services.*') ? 'text-emerald-600' : '' }}">
+                    Layanan
+                </div>
+                <div class="ml-4 mt-2 grid gap-2">
+                    <a href="{{ route('fe.services.airline-ticket') }}"
+                        class="text-sm {{ request()->routeIs('fe.services.airline-ticket') ? 'text-emerald-600' : '' }}">
+                        Tiket Pesawat
+                    </a>
+                    <a href="{{ route('fe.services.hotel-voucher') }}"
+                        class="text-sm {{ request()->routeIs('fe.services.hotel-voucher') ? 'text-emerald-600' : '' }}">
+                        Voucher Hotel
+                    </a>
+                    <a href="{{ route('fe.services.travel-document') }}"
+                        class="text-sm {{ request()->routeIs('fe.services.travel-document') ? 'text-emerald-600' : '' }}">
+                        Dokumen Travel
+                    </a>
+                </div>
+            </div>
+
+            <div class="py-2">
+                <div
+                    class="text-lg font-semibold {{ request()->routeIs('fe.activities.*') ? 'text-emerald-600' : '' }}">
+                    Kegiatan
+                </div>
+                <div class="ml-4 mt-2 grid gap-2">
+                    <a href="{{ route('fe.activities.article') }}"
+                        class="text-sm {{ request()->routeIs('fe.activities.article') ? 'text-emerald-600' : '' }}">
+                        Artikel
+                    </a>
+                    <a href="{{ route('fe.activities.gallery') }}"
+                        class="text-sm {{ request()->routeIs('fe.activities.gallery') ? 'text-emerald-600' : '' }}">
+                        Galeri
+                    </a>
+                </div>
+            </div>
             <a href="{{ route('fe.contact-us') }}"
                 class="flex w-full items-center py-2 text-lg font-semibold {{ request()->routeIs('fe.contact-us') ? 'text-emerald-600' : '' }}">
                 Kontak
             </a>
-            <a href="{{ route('fe.contact-us') }}"
-                class="flex w-full items-center py-2 text-lg font-semibold text-emerald-600 px-3 py-2">
+            <a href="https://kemenag.go.id/" target="_blank"
+                class="flex w-full items-center py-2 text-lg font-semibold py-2 text-emerald-400">
+                <img src="{{ asset('assets/images/certification/kemenag.png') }}" alt="Kementrian Agama"
+                    class="h-5 w-auto object-contain">&nbsp;
                 Kemenag
             </a>
         </div>

@@ -17,7 +17,7 @@
             <section class="container mx-auto px-4 py-8 bg-white">
                 <div class="flex flex-col md:flex-row gap-6">
                     <!-- Image Column - Made smaller by flex -->
-                    <div class="w-full md:w-2/5 flex justify-center sm:justify-end md:items-start">
+                    <div class="w-full md:w-2/5 flex justify-center md:justify-end md:items-start">
                         <img src="{{ asset('assets/images/package/haji/' . $h_pack['brochure']) }}" alt="Hajj Package"
                             class="w-full max-w-[300px] md:max-w-[350px] h-auto rounded-lg shadow-lg object-cover"
                             width="725" height="1024" loading="lazy">

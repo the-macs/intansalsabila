@@ -41,15 +41,38 @@
             </div>
 
             {{-- Paket Tour --}}
-            <a href="{{ route('fe.contact-us') }}"
-                class="text-sm font-medium duration-200 rounded px-3 py-2 {{ request()->routeIs('fe.contact-us') ? 'bg-intan-secondary' : 'hover:bg-intan-secondary' }}">
+            <a href="{{ route('fe.tour-package') }}"
+                class="text-sm font-medium duration-200 rounded px-3 py-2 {{ request()->routeIs('fe.tour-package') ? 'bg-intan-secondary' : 'hover:bg-intan-secondary' }}">
                 Paket Tour
             </a>
-            {{-- Paket Tour --}}
-            <a href="{{ route('fe.services.airline-ticket') }}"
-                class="text-sm font-medium duration-200 rounded px-3 py-2 {{ request()->routeIs('fe.services') ? 'bg-intan-secondary' : 'hover:bg-intan-secondary' }}">
-                Layanan
-            </a>
+
+            {{-- Layanan --}}
+            @php
+                // $isServiceActive = request()->routeIs('fe.packages.hajj') || request()->routeIs('fe.packages.umrah');
+            @endphp
+            <div x-data="{ open: false }" class="relative">
+                <button @click="open = !open"
+                    class="flex items-center p-0 text-sm font-medium duration-200 rounded px-3 py-2 focus:outline-none cursor-pointer {{ request()->routeIs('fe.services.*') ? 'bg-intan-secondary' : 'hover:bg-intan-secondary' }}">
+                    Layanan &nbsp;
+                    <i class="fa-solid fa-chevron-down text-x cursor-pointer"></i>
+                </button>
+                <div x-show="open" @click.away="open = false"
+                    class="absolute left-1/2 transform -translate-x-1/2 mt-5 w-48 shadow-lg bg-[#17175f] ring-opacity-5 z-50">
+                    <a href="{{ route('fe.services.airline-ticket') }}"
+                        class="block px-4 py-2 text-sm duration-200 {{ request()->routeIs('fe.services.airline-ticket') ? 'bg-intan-secondary' : 'hover:bg-intan-secondary' }}">
+                        Tiket Pesawat
+                    </a>
+                    <a href="{{ route('fe.services.hotel-voucher') }}"
+                        class="block px-4 py-2 text-sm duration-200 {{ request()->routeIs('fe.services.hotel-voucher') ? 'bg-intan-secondary' : 'hover:bg-intan-secondary' }}">
+                        Voucher Hotel
+                    </a>
+                    <a href="{{ route('fe.services.travel-document') }}"
+                        class="block px-4 py-2 text-sm duration-200 {{ request()->routeIs('fe.services.travel-document') ? 'bg-intan-secondary' : 'hover:bg-intan-secondary' }}">
+                        Dokumen Travel
+                    </a>
+                </div>
+            </div>
+
 
             {{-- Kegiatan Dropdown --}}
             @php

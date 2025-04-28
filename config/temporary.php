@@ -497,8 +497,69 @@ return [
                 'slug' => "essential-duas-hajj-umrah",
             ],
         ]
+    ],
+    'articles' => [
+        [
+            'id' => 1,
+            'title' => "Preparing for Your First Umrah: A Complete Guide",
+            'excerpt' => "Learn everything you need to know before embarking on your first Umrah journey, from spiritual preparation to practical tips.",
+            'image' => "https://picsum.photos/600/400",
+            'date' => "April 15, 2023",
+            'author' => "Sheikh Abdullah Al-Mansouri",
+            'category' => "Guides",
+            'slug' => "preparing-for-first-umrah",
+        ],
+        [
+            'id' => 2,
+            'title' => "The History and Significance of the Kaaba",
+            'excerpt' => "Explore the rich history and profound religious significance of the Kaaba, Islam's most sacred structure.",
+            'image' => "https://picsum.photos/600/400",
+            'date' => "March 22, 2023",
+            'author' => "Dr. Mohammed Al-Farsi",
+            'category' => "History",
+            'slug' => "history-significance-kaaba",
+        ],
+        [
+            'id' => 3,
+            'title' => "Hajj vs Umrah: Understanding the Differences",
+            'excerpt' => "A comprehensive comparison of Hajj and Umrah, explaining their similarities, differences, and religious significance.",
+            'image' => "https://picsum.photos/600/400",
+            'date' => "February 10, 2023",
+            'author' => "Aisha Al-Mansouri",
+            'category' => "Education",
+            'slug' => "hajj-vs-umrah-differences",
+        ],
+        [
+            'id' => 4,
+            'title' => "Best Times to Perform Umrah: Seasonal Guide",
+            'excerpt' => "Discover the optimal times throughout the year to perform Umrah, considering weather, crowds, and spiritual significance.",
+            'image' => "https://picsum.photos/600/400",
+            'date' => "January 5, 2023",
+            'author' => "Fatima Rahman",
+            'category' => "Planning",
+            'slug' => "best-times-perform-umrah",
+        ],
+        [
+            'id' => 5,
+            'title' => "Spiritual Reflections: Personal Stories from Pilgrims",
+            'excerpt' => "Read moving personal accounts from pilgrims who have completed their Hajj or Umrah journey and how it transformed their lives.",
+            'image' => "https://picsum.photos/600/400",
+            'date' => "December 12, 2022",
+            'author' => "Ahmed Hassan",
+            'category' => "Testimonials",
+            'slug' => "spiritual-reflections-pilgrim-stories",
+        ],
+        [
+            'id' => 6,
+            'title' => "Essential Duas for Hajj and Umrah",
+            'excerpt' => "Learn the important prayers and supplications that every pilgrim should know when performing Hajj or Umrah.",
+            'image' => "https://picsum.photos/600/400",
+            'date' => "November 8, 2022",
+            'author' => "Dr. Mohammed Al-Farsi",
+            'category' => "Guidance",
+            'slug' => "essential-duas-hajj-umrah",
+        ],
     ]
-
 ];
 
 

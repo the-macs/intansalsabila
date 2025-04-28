@@ -13,7 +13,17 @@ class ServiceController extends Controller
      */
     public function showAirline()
     {
-        // 
+        $images = [
+            'sriwijayaair.png',
+            'airasia.png',
+            'etihad.png',
+            'garuda.png',
+            'lionair.png',
+            'oman.png',
+            'qatar.png',
+            'saudia.jpg',
+        ];
+        return view('pages.services.airline-ticket', compact('images'));
     }
 
     /**
@@ -23,7 +33,15 @@ class ServiceController extends Controller
      */
     public function showHotelVoucher()
     {
-        // 
+        $images = [
+            'ibis.png',
+            'accor.png',
+            'crowne.png',
+            'intercontinental.png',
+            'marriott.png',
+            'sheraton.png',
+        ];
+        return view('pages.services.hotel-voucher', compact('images'));
     }
 
     /**
@@ -33,6 +51,6 @@ class ServiceController extends Controller
      */
     public function showTravelDocument()
     {
-        //
+        return view('pages.services.travel-document');
     }
 }

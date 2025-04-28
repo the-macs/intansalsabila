@@ -17,7 +17,7 @@
         <section class="bg-white py-8">
             <div class="container px-4 md:px-6">
                 <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0">
-                    <a href="{{ route('fe.activity.gallery') }}"
+                    <a href="{{ route('fe.activities.gallery') }}"
                         class="flex items-center gap-2 mr-4 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
                         <i class="fas fa-arrow-left fa-sm"></i>
                         Back to Collections

@@ -17,6 +17,7 @@ Route::get('/packages/umrah', fn() => view('pages.packages.umrah', [
 ]))->name('fe.packages.umrah');
 
 Route::get('/activities/article', [ArticleController::class, 'index'])->name('fe.activities.article');
+Route::get('/activities/article/{slug}', [ArticleController::class, 'show'])->name('fe.activities.article-detail');
 
 
 Route::get('/activities/gallery', [GalleryController::class, 'index'])->name('fe.activities.gallery');

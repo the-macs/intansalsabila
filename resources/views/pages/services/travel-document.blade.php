@@ -28,7 +28,7 @@
                                 class="text-blue-600 hover:text-blue-800">intansalsabila.visa@gmail.com</a>
                         </p>
                         <p class="text-lg mb-4">atau via whatsapp kami sebagai berikut:
-                            <a href="https://api.whatsapp.com/send?phone=6281310709780&amp;text=Assalamualaikum%20..%20mau%20menanyakan%20harga%20visa%20umrah?%20"
+                            <a href="https://api.whatsapp.com/send?phone=6287778500808&amp;text=Assalamualaikum%20..%20mau%20menanyakan%20harga%20visa%20umrah?%20"
                                 target="_blank"
                                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 mt-4">
                                 CS Visa umrah

@@ -7,8 +7,8 @@
             <img src="{{ asset('assets/images/banner/banner-gallery.webp') }}" alt="Gallery"
                 class="absolute h-full w-full object-cover brightness-50">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
-                <h1 class="mb-4 text-4xl font-bold md:text-5xl">Gallery</h1>
-                <p class="max-w-2xl text-lg">Browse our collection of photos from recent pilgrimages</p>
+                <h1 class="mb-4 text-4xl font-bold md:text-5xl">Galeri</h1>
+                <p class="max-w-2xl text-lg">Jelajahi koleksi foto kegiatan kami</p>
             </div>
         </section>
 

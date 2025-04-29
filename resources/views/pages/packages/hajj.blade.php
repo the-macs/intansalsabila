@@ -7,8 +7,8 @@
             <img src="{{ asset('assets/images/banner/banner-hajj.webp') }}" alt="Hajj Packages"
                 class="object-cover brightness-50 w-full h-full">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
-                <h1 class="mb-4 text-4xl font-bold md:text-5xl">Hajj Packages</h1>
-                <p class="max-w-2xl text-lg">Embark on the journey of a lifetime with our comprehensive Hajj packages</p>
+                <h1 class="mb-4 text-4xl font-bold md:text-5xl">Paket Haji</h1>
+                <p class="max-w-2xl text-lg">Mulailah perjalanan seumur hidup dengan paket haji komprehensif kami</p>
             </div>
         </section>
 
@@ -105,7 +105,7 @@
 
                         <!-- Button -->
                         <div class="pt-4">
-                            <a href="http://wa.me/6289680882790" target="_blank"
+                            <a href="http://wa.me/6287778500808" target="_blank"
                                 class="inline-block px-6 py-2 bg-green-500 text-black font-semibold rounded-lg hover:bg-green-600 transition-colors text-center items-start">
                                 <i class="fa-brands fa-whatsapp text-lg"></i>
                                 Klik Untuk Daftar

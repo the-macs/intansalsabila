@@ -1,8 +1,9 @@
-<header class="sticky top-0 z-50 w-full border-b bg-[#17175f]">
+<header class="sticky top-0 z-50 w-full bg-intan-secondary">
+    <x-topbar />
     <div class="container flex h-16 items-center justify-between px-4 md:px-6 mx-auto">
         <a href="/" class="flex items-center gap-2">
-            <img src="{{ asset('assets/images/logo/logo-icon.webp') }}" alt="Logo" class="w-full max-w-15">
-            <img src="{{ asset('assets/images/logo/logo-text.webp') }}" alt="Logo" class="w-full max-w-15">
+            <img src="{{ asset('assets/images/logo/logo-full.webp') }}" alt="Logo" class="w-full max-w-10">
+            {{-- <img src="{{ asset('assets/images/logo/logo-text.webp') }}" alt="Logo" class="w-full max-w-15"> --}}
         </a>
 
         <!-- Desktop Navigation -->

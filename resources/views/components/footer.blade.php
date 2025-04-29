@@ -5,9 +5,8 @@
             <div class="grid gap-8 grid-cols-1">
                 <div>
                     <a href="/" class="flex items-center gap-2">
-                        <img src="{{ asset('assets/images/logo/logo-icon.webp') }}" alt="Al-Baraka Logo"
-                            class=" px-1 py-2.5 w-12">
-                        <img src="{{ asset('assets/images/logo/logo-text.webp') }}" alt="Al-Baraka Logo" class="w-12">
+                        <img src="{{ asset('assets/images/logo/logo-full.webp') }}" alt="Al-Baraka Logo"
+                            class=" px-1 py-2.5 w-16">
                     </a>
                     <p class="mt-4 text-sm text-emerald-100">
                         Mitra terpercaya Anda untuk layanan haji dan umrah sejak 1994
@@ -17,15 +16,19 @@
                     <h3 class="mb-4 text-lg font-semibold">Follow Us</h3>
                     <div class="flex items-center gap-4">
                         <a href="https://www.instagram.com/intansalsabilaofficial/" target="_blank"
-                            class="rounded-full bg-emerald-800 px-2 py-1 hover:bg-emerald-700">
+                            class="rounded-full bg-intan-primary px-2 py-1 hover:bg-emerald-700">
                             <i class="fa-brands fa-instagram"></i>
                             <span class="sr-only">Instagram</span>
                         </a>
                         <a href="https://www.facebook.com/intansalsabilaofficial" target="_blank"
-                            class="rounded-full bg-emerald-800 px-2 py-1 hover:bg-emerald-700">
-
+                            class="rounded-full bg-intan-primary px-2 py-1 hover:bg-emerald-700">
                             <i class="fa-brands fa-facebook"></i>
-                            <span class="sr-only">Twitter</span>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@intansalsabilaofficial?_t=ZS-8vuRzhTczCq&_r=1" target="_blank"
+                            class="rounded-full bg-intan-primary px-2 py-1 hover:bg-emerald-700">
+                            <i class="fa-brands fa-tiktok"></i>
+                            <span class="sr-only">Tiktok</span>
                         </a>
                     </div>
                 </div>

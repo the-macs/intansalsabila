@@ -248,29 +248,5 @@
                 </div>
             </div>
         </section>
-
-
-        <!-- CTA Section -->
-        <section class="bg-emerald-900 py-16 text-white">
-            <div class="container px-4 md:px-6 mx-auto">
-                <div class="flex flex-col items-center text-center">
-                    <h2 class="mb-4 text-3xl font-bold md:text-4xl">Ready to Begin Your Spiritual Journey?</h2>
-                    <p class="mb-8 max-w-2xl text-emerald-100">
-                        Contact us today to book your Hajj or Umrah package or to get more information about our services.
-                    </p>
-                    <div class="flex flex-col gap-4 sm:flex-row">
-                        <a href="/contact"
-                            class="bg-white text-emerald-900 hover:bg-emerald-100 font-medium rounded-lg text-lg px-6 py-3 text-center">
-                            Contact Us
-                        </a>
-                        <a href="/packages"
-                            class="border border-white text-white hover:bg-white/10 font-medium rounded-lg text-lg px-6 py-3 text-center">
-                            Explore Packages
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </div>
 @endsection

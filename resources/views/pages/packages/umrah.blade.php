@@ -8,9 +8,9 @@
             <img src="{{ asset('assets/images/banner/banner-umrah.webp') }}" alt="Umrah Packages"
                 class="object-cover w-full h-full brightness-50">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
-                <h1 class="mb-4 text-4xl font-bold md:text-5xl">Umrah Packages</h1>
+                <h1 class="mb-4 text-4xl font-bold md:text-5xl">Paket Umrah</h1>
                 <p class="max-w-2xl text-lg">
-                    Choose from our carefully designed Umrah packages to suit your needs and budget
+                    Pilihlah paket umrah yang kami rancang dengan cermat sesuai dengan kebutuhan dan anggaran Anda
                 </p>
             </div>
         </section>
@@ -101,7 +101,7 @@
 
                         <!-- Button -->
                         <div class="pt-4">
-                            <a href="http://wa.me/6289680882790" target="_blank"
+                            <a href="http://wa.me/6287778500808" target="_blank"
                                 class="inline-block px-6 py-2 bg-green-500 text-black font-semibold rounded-lg hover:bg-green-600 transition-colors text-center items-start">
                                 <i class="fa-brands fa-whatsapp text-lg"></i>
                                 Klik Untuk Daftar

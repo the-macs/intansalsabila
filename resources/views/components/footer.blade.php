@@ -5,8 +5,7 @@
             <div class="grid gap-8 grid-cols-1">
                 <div>
                     <a href="/" class="flex items-center gap-2">
-                        <img src="{{ asset('assets/images/logo/logo-full.webp') }}" alt="Al-Baraka Logo"
-                            class=" px-1 py-2.5 w-16">
+                        <img src="{{ asset('assets/images/logo/logo-w-border.webp') }}" alt="Al-Baraka Logo" class=" px-1 py-2.5 w-16">
                     </a>
                     <p class="mt-4 text-sm text-emerald-100">
                         Mitra terpercaya Anda untuk layanan haji dan umrah sejak 1994
@@ -15,18 +14,15 @@
                 <div>
                     <h3 class="mb-4 text-lg font-semibold">Follow Us</h3>
                     <div class="flex items-center gap-4">
-                        <a href="https://www.instagram.com/intansalsabilaofficial/" target="_blank"
-                            class="rounded-full bg-intan-primary px-2 py-1 hover:bg-emerald-700">
+                        <a href="https://www.instagram.com/intansalsabilaofficial/" target="_blank" class="rounded-full bg-intan-primary px-2 py-1 hover:bg-emerald-700">
                             <i class="fa-brands fa-instagram"></i>
                             <span class="sr-only">Instagram</span>
                         </a>
-                        <a href="https://www.facebook.com/intansalsabilaofficial" target="_blank"
-                            class="rounded-full bg-intan-primary px-2 py-1 hover:bg-emerald-700">
+                        <a href="https://www.facebook.com/intansalsabilaofficial" target="_blank" class="rounded-full bg-intan-primary px-2 py-1 hover:bg-emerald-700">
                             <i class="fa-brands fa-facebook"></i>
                             <span class="sr-only">Facebook</span>
                         </a>
-                        <a href="https://www.tiktok.com/@intansalsabilaofficial?_t=ZS-8vuRzhTczCq&_r=1" target="_blank"
-                            class="rounded-full bg-intan-primary px-2 py-1 hover:bg-emerald-700">
+                        <a href="https://www.tiktok.com/@intansalsabilaofficial?_t=ZS-8vuRzhTczCq&_r=1" target="_blank" class="rounded-full bg-intan-primary px-2 py-1 hover:bg-emerald-700">
                             <i class="fa-brands fa-tiktok"></i>
                             <span class="sr-only">Tiktok</span>
                         </a>
@@ -57,7 +53,7 @@
                         <a href="/gallery" class="hover:underline">Galeri</a>
                     </li>
                     <li>
-                        <a href="{{ route('fe.contact-us') }}" class="hover:underline">Kontak</a>
+                        <a href="{{ route('fe.contact') }}" class="hover:underline">Kontak</a>
                     </li>
                 </ul>
             </div>
@@ -105,41 +101,32 @@
                 <div class="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
                     {{-- @foreach (range(1, 10) as $index) --}}
                     <div class="flex items-center justify-center">
-                        <img src="{{ asset('assets/images/certification/himpuh.png') }}" alt="Legalitas HIMPUH"
-                            class="h-16 w-auto object-contain">
+                        <img src="{{ asset('assets/images/certification/himpuh.png') }}" alt="Legalitas HIMPUH" class="h-16 w-auto object-contain">
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="{{ asset('assets/images/certification/sisko-patuh.png') }}" alt="Sisko Patuh"
-                            class="h-16 w-auto object-contain">
+                        <img src="{{ asset('assets/images/certification/sisko-patuh.png') }}" alt="Sisko Patuh" class="h-16 w-auto object-contain">
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="{{ asset('assets/images/certification/iata.png') }}" alt="IATA"
-                            class="h-16 w-auto object-contain">
+                        <img src="{{ asset('assets/images/certification/iata.png') }}" alt="IATA" class="h-16 w-auto object-contain">
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="{{ asset('assets/images/certification/asita.png') }}"
-                            alt="Association of Indonesia Tours & Travel Agency" class="h-16 w-auto object-contain">
+                        <img src="{{ asset('assets/images/certification/asita.png') }}" alt="Association of Indonesia Tours & Travel Agency" class="h-16 w-auto object-contain">
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="{{ asset('assets/images/certification/kemenag.png') }}" alt="Kementrian Agama"
-                            class="h-16 w-auto object-contain">
+                        <img src="{{ asset('assets/images/certification/kemenag.png') }}" alt="Kementrian Agama" class="h-16 w-auto object-contain">
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="{{ asset('assets/images/certification/kan-lspr.png') }}"
-                            alt="Komite Akreditasi Nasional - LSPR" class="h-16 w-auto object-contain">
+                        <img src="{{ asset('assets/images/certification/kan-lspr.png') }}" alt="Komite Akreditasi Nasional - LSPR" class="h-16 w-auto object-contain">
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="{{ asset('assets/images/certification/tims-bpw.png') }}" alt="TiMS - BPW"
-                            class="h-16 w-auto object-contain">
+                        <img src="{{ asset('assets/images/certification/tims-bpw.png') }}" alt="TiMS - BPW" class="h-16 w-auto object-contain">
 
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="{{ asset('assets/images/certification/kan-lssm.png') }}"
-                            alt="Komite Akreditasi Nasional - LSSM" class="h-16 w-auto object-contain">
+                        <img src="{{ asset('assets/images/certification/kan-lssm.png') }}" alt="Komite Akreditasi Nasional - LSSM" class="h-16 w-auto object-contain">
                     </div>
                     <div class="flex items-center justify-center">
-                        <img src="{{ asset('assets/images/certification/tims-qms.png') }}" alt="TiMS - QMS"
-                            class="h-16 w-auto object-contain">
+                        <img src="{{ asset('assets/images/certification/tims-qms.png') }}" alt="TiMS - QMS" class="h-16 w-auto object-contain">
                     </div>
                     {{-- @endforeach --}}
                 </div>

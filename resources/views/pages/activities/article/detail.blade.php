@@ -4,8 +4,7 @@
     <div class="flex flex-col">
         <!-- Hero Section -->
         <section class="relative h-[500px] w-full">
-            <img src="{{ asset('assets/images/banner/banner-article.webp') }}" alt="Articles"
-                class="object-cover brightness-50 w-full h-full">
+            <img src="{{ $article['image'] }}" alt="Articles" class="object-cover brightness-50 w-full h-full">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
                 <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $article['title'] }}</h1>
                 <p class="max-w-2xl text-lg">{{ $article['date'] }}</p>

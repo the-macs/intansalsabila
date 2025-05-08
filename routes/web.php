@@ -1,28 +1,32 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;;
 
+use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\ServiceController;
+
 Route::get('/', [HomeController::class, 'index'])->name('fe.home');
-Route::get('/contact-us', fn() => view('pages.contact-us'))->name('fe.contact-us');
-Route::get('/about-us', fn() => view('pages.about-us'))->name('fe.about-us');
-Route::get('/packages/hajj', fn() => view('pages.packages.hajj', [
-    'hajj_packages' => config('temporary.packages.hajj')
-]))->name('fe.packages.hajj');
-Route::get('/packages/umrah', fn() => view('pages.packages.umrah', [
-    'umrah_packages' => config('temporary.packages.umrah')
-]))->name('fe.packages.umrah');
+Route::get('/contact', [ContactController::class, 'index'])->name('fe.contact');
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('fe.about-us');
 
-Route::get('/activities/article', [ArticleController::class, 'index'])->name('fe.activities.article');
-Route::get('/activities/article/{slug}', [ArticleController::class, 'show'])->name('fe.activities.article-detail');
+// Package Group
+Route::get('/packages/hajj', [PackageController::class, 'indexHajj'])->name('fe.packages.hajj');
+Route::get('/packages/umrah', [PackageController::class, 'indexUmrah'])->name('fe.packages.umrah');
 
+// Activity Group - Article
+Route::get('/activities/article', [ActivityController::class, 'indexArticle'])->name('fe.activities.article');
+Route::get('/activities/article/{slug}', [ActivityController::class, 'showArticle'])->name('fe.activities.article-detail');
 
-Route::get('/activities/gallery', [GalleryController::class, 'index'])->name('fe.activities.gallery');
-Route::get('/activities/gallery/{gallery}', [GalleryController::class, 'show'])->name('fe.activities.gallery-detail');
+// Activity Group - Gallery
+Route::get('/activities/gallery', [ActivityController::class, 'indexGallery'])->name('fe.activities.gallery');
+Route::get('/activities/gallery/{gallery}', [ActivityController::class, 'showGallery'])->name('fe.activities.gallery-detail');
 
-Route::get('/services/airline-ticket', [ServiceController::class, 'showAirline'])->name('fe.services.airline-ticket');
-Route::get('/services/hotel-voucher', [ServiceController::class, 'showHotelVoucher'])->name('fe.services.hotel-voucher');
-Route::get('/services/travel-document', [ServiceController::class, 'showTravelDocument'])->name('fe.services.travel-document');
+// Service Group
+Route::get('/services/airline-ticket', [ServiceController::class, 'indexAirline'])->name('fe.services.airline-ticket');
+Route::get('/services/hotel-voucher', [ServiceController::class, 'indexHotelVoucher'])->name('fe.services.hotel-voucher');
+Route::get('/services/travel-document', [ServiceController::class, 'indexTravelDocument'])->name('fe.services.travel-document');

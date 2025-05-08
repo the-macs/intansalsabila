@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class ServiceController extends Controller
 {
     /**
@@ -11,7 +9,7 @@ class ServiceController extends Controller
      *
      * @return void
      */
-    public function showAirline()
+    public function indexAirline()
     {
         $images = [
             'sriwijayaair.png',
@@ -31,7 +29,7 @@ class ServiceController extends Controller
      *
      * @return void
      */
-    public function showHotelVoucher()
+    public function indexHotelVoucher()
     {
         $images = [
             'ibis.png',
@@ -49,7 +47,7 @@ class ServiceController extends Controller
      *
      * @return void
      */
-    public function showTravelDocument()
+    public function indexTravelDocument()
     {
         return view('pages.services.travel-document');
     }

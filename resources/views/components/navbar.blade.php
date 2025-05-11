@@ -199,7 +199,7 @@
             </a>
             <a href="https://kemenag.go.id/" target="_blank"
                 class="flex w-full items-center py-2 text-lg font-semibold py-2 text-emerald-400">
-                <img src="{{ asset('assets/images/certification/kemenag.png') }}" alt="Kementrian Agama"
+                <img src="{{ asset('storage/uploads/certifications/kemenag.png') }}" alt="Kementrian Agama"
                     class="h-5 w-auto object-contain">&nbsp;
                 Kemenag
             </a>

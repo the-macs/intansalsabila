@@ -82,6 +82,11 @@
                 </button>
                 <div x-show="open" @click.away="open = false"
                     class="absolute left-1/2 transform -translate-x-1/2 mt-5 w-48 shadow-lg bg-[#17175f] ring-opacity-5 z-50">
+                    <a href="https://himpuh.or.id/blog/kategori/2/berita" target="_blank"
+                        class="block px-4 py-2 text-sm duration-200 hover:bg-intan-secondary flex">
+                        <img src="http://intansalsabila.test/storage/uploads/certifications/himpuh.png"
+                            alt="Legalitas HIMPUH" class="h-5 object-contain" />&nbsp;HIMPUH Artikel
+                    </a>
                     <a href="{{ route('fe.activities.article') }}"
                         class="block px-4 py-2 text-sm duration-200 {{ request()->routeIs('fe.activities.article') ? 'bg-intan-secondary' : 'hover:bg-intan-secondary' }}">
                         Artikel
@@ -183,6 +188,11 @@
                     Kegiatan
                 </div>
                 <div class="ml-4 mt-2 grid gap-2">
+                    <a href="https://himpuh.or.id/blog/kategori/2/berita" target="_blank"
+                        class="text-sm text-white flex">
+                        <img src="http://intansalsabila.test/storage/uploads/certifications/himpuh.png"
+                            alt="Legalitas HIMPUH" class="h-5 object-contain" />&nbsp;HIMPUH Artikel
+                    </a>
                     <a href="{{ route('fe.activities.article') }}"
                         class="text-sm {{ request()->routeIs('fe.activities.article') ? 'text-emerald-600' : 'text-white' }}">
                         Artikel

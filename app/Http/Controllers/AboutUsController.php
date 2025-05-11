@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Banner;
+use App\Models\Certification;
 
 class AboutUsController extends Controller
 {
@@ -13,6 +14,9 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        return view('pages.about-us');
+        $banner = Banner::where('slug', 'about-us')->firstOrFail();
+        $certifications = Certification::orderBy('sort_order')->get();
+
+        return view('pages.about-us', compact('banner', 'certifications'));
     }
 }

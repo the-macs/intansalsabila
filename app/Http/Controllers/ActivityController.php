@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
+use App\Models\Banner;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
@@ -13,9 +16,11 @@ class ActivityController extends Controller
      */
     public function indexArticle()
     {
-        $articles = config('temporary.activities.articles');
+        $articles = Article::where('is_active', true)
+            ->orderByDesc('sort_order')->get();
+        $banner = Banner::where('slug', 'activity-article')->firstOrFail();
 
-        return view('pages.activities.article.index', compact('articles'));
+        return view('pages.activities.article.index', compact('banner', 'articles'));
     }
 
     /**
@@ -25,13 +30,9 @@ class ActivityController extends Controller
      */
     public function showArticle($slug)
     {
-        $articles = config('temporary.activities.articles');
-        foreach ($articles as $article) {
-            if ($article['slug'] === $slug) {
-                return view('pages.activities.article.detail', compact('article'));
-            }
-        }
-        abort(404);
+        $article = Article::where('slug', $slug)->firstOrFail();
+
+        return view('pages.activities.article.detail', compact('article'));
     }
 
     /**
@@ -41,9 +42,10 @@ class ActivityController extends Controller
      */
     public function indexGallery()
     {
-        return view('pages.activities.gallery.index', [
-            'galleries' => config('temporary.activities.galleries')
-        ]);
+        $galleries = Gallery::orderByDesc('created_at')->get();
+        $banner = Banner::where('slug', 'activity-gallery')->firstOrFail();
+
+        return view('pages.activities.gallery.index', compact('banner', 'galleries'));
     }
 
     /**
@@ -51,12 +53,11 @@ class ActivityController extends Controller
      *
      * @return mixed
      */
-    public function showGallery($gallery)
+    public function showGallery($slug)
     {
-        $data = config('temporary.activities.galleries');
+        $gallery = Gallery::where('slug', $slug)
+            ->orderByDesc('created_at')->firstOrFail();
 
-        return view('pages.activities.gallery.detail', [
-            'gallery_images' => collect($data)->firstWhere('slug', $gallery)
-        ]);
+        return view('pages.activities.gallery.detail', compact('gallery'));
     }
 }

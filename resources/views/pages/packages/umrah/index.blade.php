@@ -5,13 +5,10 @@
 
         <!-- Hero Section -->
         <section class="relative h-[400px] w-full">
-            <img src="{{ asset('assets/images/banner/banner-umrah.webp') }}" alt="Umrah Packages"
-                class="object-cover w-full h-full brightness-50">
+            <img src="{{ asset($banner->image_path) }}" alt="Hajj Packages" class="object-cover brightness-50 w-full h-full">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
-                <h1 class="mb-4 text-4xl font-bold md:text-5xl">Paket Umrah</h1>
-                <p class="max-w-2xl text-lg">
-                    Pilihlah paket umrah yang kami rancang dengan cermat sesuai dengan kebutuhan dan anggaran Anda
-                </p>
+                <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $banner->title }}</h1>
+                <p class="max-w-2xl text-lg">{{ $banner->subtitle }}</p>
             </div>
         </section>
 
@@ -20,7 +17,7 @@
                 <div class="flex flex-col md:flex-row gap-6">
                     <!-- Image Column - Made smaller by flex -->
                     <div class="w-full md:w-2/5 flex justify-center md:justify-end md:items-start">
-                        <img src="{{ asset('assets/images/package/umrah/' . $u_pack['brochure']) }}" alt="Umroh Package"
+                        <img src="{{ asset($u_pack['brochure']) }}" alt="Umroh Package"
                             class="w-full max-w-[300px] md:max-w-[350px] h-auto rounded-lg shadow-lg object-cover"
                             width="725" height="1024" loading="lazy">
                     </div>
@@ -61,7 +58,7 @@
                                         <span class="font-medium text-sm">PAKET TERMASUK</span>
                                     </div>
                                 </button>
-                                <div x-show="open" x-collapse class="px-4 py-3 bg-white">
+                                <div x-show="open" x-collapse class="prose px-4 py-3 bg-white">
                                     {!! $u_pack['incl_package'] !!}
                                 </div>
                             </div>
@@ -76,7 +73,7 @@
                                         <span class="font-medium text-sm">PAKET TIDAK TERMASUK</span>
                                     </div>
                                 </button>
-                                <div x-show="open" x-collapse class="px-4 py-3 bg-white">
+                                <div x-show="open" x-collapse class="prose px-4 py-3 bg-white">
                                     {!! $u_pack['excl_package'] !!}
                                 </div>
                             </div>
@@ -92,7 +89,7 @@
                                             <span class="font-medium text-sm">PERLENGKAPAN</span>
                                         </div>
                                     </button>
-                                    <div x-show="open" x-collapse class="px-4 py-3 bg-white">
+                                    <div x-show="open" x-collapse class="prose px-4 py-3 bg-white">
                                         {!! $u_pack['incl_equipment'] !!}
                                     </div>
                                 </div>

@@ -2,15 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Banner;
+use App\Models\PackageHajj;
+use App\Models\PackageUmrah;
+use App\Models\Testimonial;
+use PHPUnit\Event\Code\Test;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $latest_hajj_package = config('temporary.packages.hajj.0');
-        $latest_umrah_package = config('temporary.packages.umrah.0');
+        $latest_hajj_package = PackageHajj::where('is_active', true)->orderByDesc('sort_order')->firstOrFail();
+        $latest_umrah_package = PackageUmrah::where('is_active', true)->orderByDesc('sort_order')->firstOrFail();
 
-        return view('pages.home', compact('latest_hajj_package', 'latest_umrah_package'));
+        $banner = Banner::where('slug', 'home')->firstOrFail();
+
+        $testimonials = Testimonial::orderByDesc('sort_order')->get();
+
+        return view('pages.home', compact('latest_hajj_package', 'latest_umrah_package', 'banner', 'testimonials'));
     }
 }

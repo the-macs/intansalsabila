@@ -4,11 +4,11 @@
     <div class="flex flex-col">
         <!-- Hero Section -->
         <section class="relative h-[500px] w-full">
-            <img src="{{ asset('assets/images/banner/banner-gallery.webp') }}" alt="Gallery"
+            <img src="{{ asset($banner->image_path) }}" alt="Gallery"
                 class="absolute h-full w-full object-cover brightness-50">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
-                <h1 class="mb-4 text-4xl font-bold md:text-5xl">Galeri</h1>
-                <p class="max-w-2xl text-lg">Jelajahi koleksi foto kegiatan kami</p>
+                <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $banner->title }}</h1>
+                <p class="max-w-2xl text-lg">{{ $banner->subtitle }}</p>
             </div>
         </section>
 
@@ -24,26 +24,25 @@
                     @foreach ($galleries as $gallery)
                         <div class="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
                             <div class="relative h-48">
-                                <img src="{{ asset('assets/images/gallery/' . $gallery['slug'] . '/' . $gallery['images'][0]) }}"
-                                    alt="{{ $gallery['title'] }}"
+                                <img src="{{ asset($gallery->images[0]) }}" alt="{{ $gallery->title }}"
                                     class="h-full w-full object-cover transition-transform duration-300 hover:scale-105">
                             </div>
                             <div class="p-6">
-                                <h3 class="text-xl font-semibold">{{ $gallery['title'] }}</h3>
-                                <p class="mt-2 text-gray-600">{{ $gallery['description'] }}</p>
+                                <h3 class="text-xl font-semibold">{{ $gallery->title }}</h3>
+                                <p class="mt-2 text-gray-600">{{ $gallery->description }}</p>
 
                                 <div class="mt-4 flex flex-col space-y-2 text-sm">
                                     <div class="flex items-center gap-2">
                                         <i class="fas fa-calendar-days text-emerald-600 w-4"></i>
-                                        <span>{{ $gallery['date'] }}</span>
+                                        <span>{{ $gallery->date }}</span>
                                     </div>
                                     <div class="flex items-center gap-2">
                                         <i class="fas fa-map-marker-alt text-emerald-600 w-4"></i>
-                                        <span>{{ $gallery['location'] }}</span>
+                                        <span>{{ $gallery->location }}</span>
                                     </div>
                                     <div class="flex items-center gap-2">
                                         <i class="fas fa-image text-emerald-600 w-4"></i>
-                                        <span>{{ $gallery['imageCount'] }} photos</span>
+                                        <span>{{ $gallery->imageCount }} photos</span>
                                     </div>
                                 </div>
 

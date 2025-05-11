@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- @dd($gallery_images) --}}
+    {{-- @dd($gallery) --}}
     <div class="flex flex-col">
         <!-- Hero Section -->
         <section class="relative h-[500px] w-full">
-            <img src="{{ asset('assets/images/gallery/' . $gallery_images['slug'] . '/' . $gallery_images['images'][0]) }}"
-                alt="{{ $gallery_images['title'] }}" class="object-cover brightness-50 w-full h-full" />
+            <img src="{{ asset($gallery->images[0]) }}" alt="{{ $gallery->title }}"
+                class="object-cover brightness-50 w-full h-full" />
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
-                <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $gallery_images['title'] }}</h1>
-                <p class="max-w-2xl text-lg">{{ $gallery_images['description'] }}</p>
+                <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $gallery->title }}</h1>
+                <p class="max-w-2xl text-lg">{{ $gallery->description }}</p>
             </div>
         </section>
 
@@ -26,15 +26,15 @@
                     <div class="flex items-center gap-6">
                         <div class="flex items-center gap-2">
                             <i class="fas fa-calendar-day text-emerald-600"></i>
-                            <span>{{ $gallery_images['date'] }}</span>
+                            <span>{{ $gallery['date'] }}</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <i class="fas fa-map-marker-alt text-emerald-600"></i>
-                            <span>{{ $gallery_images['location'] }}</span>
+                            <span>{{ $gallery['location'] }}</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <i class="fas fa-image text-emerald-600"></i>
-                            <span>{{ count($gallery_images['images']) }} photos</span>
+                            <span>{{ count($gallery['images']) }} photos</span>
                         </div>
                     </div>
                 </div>
@@ -47,11 +47,10 @@
                 <!-- Center the grid by using flex with justify-center -->
                 <div
                     class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 items-center justify-center">
-                    @foreach ($gallery_images['images'] as $index => $image)
+                    @foreach ($gallery['images'] as $index => $image)
                         <div x-data="{ open: false }" key="{{ $index }}">
                             <div class="group relative cursor-pointer overflow-hidden rounded-lg" @click="open = true">
-                                <img src="{{ asset('assets/images/gallery/' . $gallery_images['slug'] . '/' . $image) }}"
-                                    alt="{{ $gallery_images['title'] . ' - ' . $index }}"
+                                <img src="{{ asset($image) }}" alt="{{ $gallery['title'] . ' - ' . $index }}"
                                     class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-110" />
                                 <div
                                     class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -68,8 +67,7 @@
                                         <i class="fas fa-times fa-lg"></i>
                                     </button>
                                     <div class="relative h-[60vh] bg-gray-800">
-                                        <img src="{{ asset('assets/images/gallery/' . $gallery_images['slug'] . '/' . $image) }}"
-                                            alt="{{ $gallery_images['title'] . ' - ' . $index }}"
+                                        <img src="{{ asset($image) }}" alt="{{ $gallery['title'] . ' - ' . $index }}"
                                             class="object-contain w-full h-full" />
                                     </div>
                                     @if (isset($image['caption']))

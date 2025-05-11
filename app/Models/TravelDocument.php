@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class TravelDocument extends Model
+{
+    /**
+     * Set the guarded fields
+     *
+     * @var array
+     */
+    protected $guarded = [];
+}

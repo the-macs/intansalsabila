@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\Airline;
+use App\Models\Hotel;
+use App\Models\TravelDocument;
+
 class ServiceController extends Controller
 {
     /**
@@ -11,35 +16,23 @@ class ServiceController extends Controller
      */
     public function indexAirline()
     {
-        $images = [
-            'sriwijayaair.png',
-            'airasia.png',
-            'etihad.png',
-            'garuda.png',
-            'lionair.png',
-            'oman.png',
-            'qatar.png',
-            'saudia.jpg',
-        ];
-        return view('pages.services.airline-ticket', compact('images'));
+        $banner = Banner::where('slug', 'service-airline')->firstOrFail();
+        $airlines = Airline::orderBy('sort_order')->get();
+
+        return view('pages.services.airline-ticket', compact('banner', 'airlines'));
     }
 
     /**
-     * For Showing page Hotel Voucher
+     * For Showing page Hotel
      *
      * @return void
      */
     public function indexHotelVoucher()
     {
-        $images = [
-            'ibis.png',
-            'accor.png',
-            'crowne.png',
-            'intercontinental.png',
-            'marriott.png',
-            'sheraton.png',
-        ];
-        return view('pages.services.hotel-voucher', compact('images'));
+        $banner = Banner::where('slug', 'service-hotel')->firstOrFail();
+        $hotels = Hotel::orderBy('sort_order')->get();
+
+        return view('pages.services.hotel-voucher', compact('banner', 'hotels'));
     }
 
     /**
@@ -49,6 +42,9 @@ class ServiceController extends Controller
      */
     public function indexTravelDocument()
     {
-        return view('pages.services.travel-document');
+        $banner = Banner::where('slug', 'service-hotel')->firstOrFail();
+        $travel_document = TravelDocument::firstOrFail();
+
+        return view('pages.services.travel-document', compact('banner', 'travel_document'));
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;;
+use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 
@@ -24,7 +24,7 @@ Route::get('/activities/article/{slug}', [ActivityController::class, 'showArticl
 
 // Activity Group - Gallery
 Route::get('/activities/gallery', [ActivityController::class, 'indexGallery'])->name('fe.activities.gallery');
-Route::get('/activities/gallery/{gallery}', [ActivityController::class, 'showGallery'])->name('fe.activities.gallery-detail');
+Route::get('/activities/gallery/{slug}', [ActivityController::class, 'showGallery'])->name('fe.activities.gallery-detail');
 
 // Service Group
 Route::get('/services/airline-ticket', [ServiceController::class, 'indexAirline'])->name('fe.services.airline-ticket');

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Banner;
+use App\Models\BranchOffice;
 
 class ContactController extends Controller
 {
@@ -13,6 +14,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('pages.contact');
+        $banner = Banner::where('slug', 'contact')->firstOrFail();
+        $branches = BranchOffice::all();
+
+        return view('pages.contact', compact('branches', 'banner'));
     }
 }

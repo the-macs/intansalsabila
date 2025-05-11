@@ -4,7 +4,7 @@
     <div class="flex flex-col">
         <!-- Hero Section -->
         <section class="relative h-[400px] w-full">
-            <img src="{{ asset($banner->image_path) }}" alt="Contact Us"
+            <img src="{{ asset('storage/' . $banner->image_path) }}" alt="Contact Us"
                 class="object-cover object-bottom brightness-50 w-full h-full">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
                 <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $banner->title }}</h1>

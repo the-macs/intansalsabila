@@ -4,7 +4,8 @@
     <div class="flex flex-col">
         <!-- Hero Section -->
         <section class="relative h-[400px] w-full">
-            <img src="{{ asset($banner->image_path) }}" alt="Hajj Packages" class="object-cover brightness-50 w-full h-full">
+            <img src="{{ asset('storage/' . $banner->image_path) }}" alt="Hajj Packages"
+                class="object-cover brightness-50 w-full h-full">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
                 <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $banner->title }}</h1>
                 <p class="max-w-2xl text-lg">{{ $banner->subtitle }}</p>
@@ -17,7 +18,7 @@
                 <div class="flex flex-col md:flex-row gap-6">
                     <!-- Image Column -->
                     <div class="w-full md:w-2/5 flex justify-center md:justify-end md:items-start">
-                        <img src="{{ asset($h_pack->brochure) }}" alt="Hajj Package"
+                        <img src="{{ asset('storage/' . $h_pack->brochure) }}" alt="Hajj Package"
                             class="w-full max-w-[300px] md:max-w-[350px] h-auto rounded-lg shadow-lg object-cover"
                             width="725" height="1024" loading="lazy">
                     </div>

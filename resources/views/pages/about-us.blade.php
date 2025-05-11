@@ -4,7 +4,8 @@
     <div class="flex flex-col">
         <!-- Hero Section -->
         <section class="relative h-[400px] w-full">
-            <img src="{{ asset($banner->image_path) }}" alt="About Us" class="object-cover brightness-50 w-full h-full">
+            <img src="{{ asset('storage/' . $banner->image_path) }}" alt="About Us"
+                class="object-cover brightness-50 w-full h-full">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
                 <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $banner->title }}</h1>
                 <p class="max-w-2xl text-lg">{{ $banner->subtitle }}</p>
@@ -16,7 +17,7 @@
             <div class="container px-4 md:px-6 mx-auto">
                 <div class="grid gap-12 grid-cols-1 md:grid-cols-2">
                     <div class="flex justify-center items-center h-full">
-                        <img src="{{ asset($company_info->company_logo['main_logo']) }}"
+                        <img src="{{ asset('storage/' . $company_info->company_logo['main_logo']) }}"
                             alt="{{ basename($company_info->company_logo['main_logo']) }}" title="{{ $company_info->name }}"
                             class="object-contain w-[75%] h-auto">
                     </div>

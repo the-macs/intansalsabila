@@ -5,7 +5,7 @@
     <div class="flex flex-col">
         <!-- Hero Section -->
         <section class="relative h-[500px] w-full">
-            <img src="{{ asset($gallery->images[0]) }}" alt="{{ $gallery->title }}"
+            <img src="{{ asset('storage/' . $gallery->images[0]) }}" alt="{{ $gallery->title }}"
                 class="object-cover brightness-50 w-full h-full" />
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
                 <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $gallery->title }}</h1>
@@ -50,7 +50,7 @@
                     @foreach ($gallery['images'] as $index => $image)
                         <div x-data="{ open: false }" key="{{ $index }}">
                             <div class="group relative cursor-pointer overflow-hidden rounded-lg" @click="open = true">
-                                <img src="{{ asset($image) }}" alt="{{ $gallery['title'] . ' - ' . $index }}"
+                                <img src="{{ asset('storage/' . $image) }}" alt="{{ $gallery['title'] . ' - ' . $index }}"
                                     class="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-110" />
                                 <div
                                     class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -67,7 +67,8 @@
                                         <i class="fas fa-times fa-lg"></i>
                                     </button>
                                     <div class="relative h-[60vh] bg-gray-800">
-                                        <img src="{{ asset($image) }}" alt="{{ $gallery['title'] . ' - ' . $index }}"
+                                        <img src="{{ asset('storage/' . $image) }}"
+                                            alt="{{ $gallery['title'] . ' - ' . $index }}"
                                             class="object-contain w-full h-full" />
                                     </div>
                                     @if (isset($image['caption']))

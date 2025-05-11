@@ -4,7 +4,7 @@
     <div class="flex flex-col">
         <!-- Hero Section -->
         <section class="relative h-[500px] w-full">
-            <img src="{{ asset($banner->image_path) }}" alt="Kaaba in Mecca"
+            <img src="{{ asset('storage/' . $banner->image_path) }}" alt="Kaaba in Mecca"
                 class="object-cover object-bottom brightness-50 w-full h-full bg-slate-500">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
                 <h1 class="mb-4 text-4xl font-bold md:text-5xl lg:text-6xl">{{ $banner->title }}</h1>
@@ -35,7 +35,7 @@
                     <!-- Umrah Package -->
                     <x-card class="overflow-hidden w-1/2">
                         <div class="relative">
-                            <img src="{{ asset($latest_umrah_package['brochure']) }}" alt="Umrah Package"
+                            <img src="{{ asset('storage/' . $latest_umrah_package['brochure']) }}" alt="Umrah Package"
                                 class="object-cover h-full">
                         </div>
                         <x-card.header>
@@ -59,7 +59,7 @@
                     <!-- Hajj Package -->
                     <x-card class="overflow-hidden">
                         <div class="relative">
-                            <img src="{{ asset($latest_hajj_package['brochure']) }}" alt="Umrah Package"
+                            <img src="{{ asset('storage/' . $latest_hajj_package['brochure']) }}" alt="Umrah Package"
                                 class="object-cover w-full h-full">
                         </div>
                         <x-card.header>
@@ -95,7 +95,7 @@
                     <!-- Umrah Package -->
                     <x-card class="overflow-hidden w-1/2">
                         <div class="relative">
-                            <img src="{{ asset($company_info->regulation['umrah']) }}" alt="Umrah Package"
+                            <img src="{{ asset('storage/' . $company_info->regulation['umrah']) }}" alt="Umrah Package"
                                 class="object-cover h-full">
                         </div>
                     </x-card>
@@ -103,7 +103,7 @@
                     <!-- Hajj Package -->
                     <x-card class="overflow-hidden">
                         <div class="relative">
-                            <img src="{{ asset($company_info->regulation['hajj']) }}" alt="Umrah Package"
+                            <img src="{{ asset('storage/' . $company_info->regulation['hajj']) }}" alt="Umrah Package"
                                 class="object-cover w-full h-full">
                         </div>
                     </x-card>

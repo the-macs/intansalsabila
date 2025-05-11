@@ -5,7 +5,7 @@
             <div class="grid gap-8 grid-cols-1">
                 <div>
                     <a href="/" class="flex items-center gap-2">
-                        <img src="{{ asset($company_info->company_logo['alt_logo']) }}" alt="Al-Baraka Logo"
+                        <img src="{{ asset('storage/' . $company_info->company_logo['alt_logo']) }}" alt="Al-Baraka Logo"
                             class=" px-1 py-2.5 w-16">
                     </a>
                     <p class="mt-4 text-sm text-emerald-100">
@@ -115,7 +115,7 @@
                 <div class="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
                     @foreach (\App\Models\Certification::orderBy('sort_order')->get() as $item)
                         <div class="flex items-center justify-center">
-                            <img src="{{ asset($item->image_path) }}" alt="Legalitas HIMPUH"
+                            <img src="{{ asset('storage/' . $item->image_path) }}" alt="Legalitas HIMPUH"
                                 class="h-16 w-auto object-contain">
                         </div>
                     @endforeach

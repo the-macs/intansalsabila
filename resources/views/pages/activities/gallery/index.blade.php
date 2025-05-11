@@ -4,7 +4,7 @@
     <div class="flex flex-col">
         <!-- Hero Section -->
         <section class="relative h-[500px] w-full">
-            <img src="{{ asset($banner->image_path) }}" alt="Gallery"
+            <img src="{{ asset('storage/' . $banner->image_path) }}" alt="Gallery"
                 class="absolute h-full w-full object-cover brightness-50">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
                 <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $banner->title }}</h1>
@@ -24,7 +24,7 @@
                     @foreach ($galleries as $gallery)
                         <div class="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
                             <div class="relative h-48">
-                                <img src="{{ asset($gallery->images[0]) }}" alt="{{ $gallery->title }}"
+                                <img src="{{ asset('storage/' . $gallery->images[0]) }}" alt="{{ $gallery->title }}"
                                     class="h-full w-full object-cover transition-transform duration-300 hover:scale-105">
                             </div>
                             <div class="p-6">

@@ -2,7 +2,8 @@
     <x-topbar />
     <div class="container flex h-16 items-center justify-between px-4 md:px-6 mx-auto">
         <a href="/" class="flex items-center gap-2">
-            <img src="{{ asset($company_info->company_logo['alt_logo']) }}" alt="Logo" class="w-full max-w-10">
+            <img src="{{ asset('storage/' . $company_info->company_logo['alt_logo']) }}" alt="Logo"
+                class="w-full max-w-10">
             {{-- <img src="{{ asset('assets/images/logo/logo-text.webp') }}" alt="Logo" class="w-full max-w-15"> --}}
         </a>
 

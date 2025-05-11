@@ -4,7 +4,8 @@
     <div class="flex flex-col">
         <!-- Hero Section -->
         <section class="relative h-[500px] w-full">
-            <img src="{{ asset($banner->image_path) }}" alt="Articles" class="object-cover brightness-50 w-full h-full">
+            <img src="{{ asset('storage/' . $banner->image_path) }}" alt="Articles"
+                class="object-cover brightness-50 w-full h-full">
             <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center text-white">
                 <h1 class="mb-4 text-4xl font-bold md:text-5xl">{{ $banner->title }}</h1>
                 <p class="max-w-2xl text-lg">{{ $banner->subtitle }}</p>
@@ -18,7 +19,7 @@
                     @foreach ($articles as $article)
                         <x-card class="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                             <div class="relative h-48">
-                                <img src="{{ asset($article->cover_image) ?? '/images/article-placeholder.jpg' }}"
+                                <img src="{{ asset('storage/' . $article->cover_image) ?? '/images/article-placeholder.jpg' }}"
                                     alt="{{ $article->title }}" class="object-cover w-full h-full">
                             </div>
                             <x-card.header class="min-h-40">

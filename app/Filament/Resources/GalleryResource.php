@@ -93,7 +93,7 @@ class GalleryResource extends Resource
                         }
 
                         return array_map(function ($image) use ($record) {
-                            return asset($image);
+                            return asset('storage/' . $image);
                         }, $images ?? []);
                     }),
 

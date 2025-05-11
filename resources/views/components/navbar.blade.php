@@ -100,7 +100,7 @@
 
             <a href="https://kemenag.go.id/" target="_blank"
                 class="flex text-sm font-medium px-3 py-2 bg-emerald-600 rounded hover:bg-intan-secondary duration-200 text-gray-200 animate-pulse">
-                <img src="{{ asset('assets/images/certification/kemenag.png') }}" alt="Kementrian Agama"
+                <img src="{{ asset('storage/uploads/certifications/kemenag.png') }}" alt="Kementrian Agama"
                     class="h-5 w-auto object-contain">&nbsp;
                 Kemenag
             </a>

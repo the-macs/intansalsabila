@@ -190,8 +190,8 @@
                 <div class="ml-4 mt-2 grid gap-2">
                     <a href="https://himpuh.or.id/blog/kategori/2/berita" target="_blank"
                         class="text-sm text-white flex">
-                        <img src="http://intansalsabila.test/storage/uploads/certifications/himpuh.png"
-                            alt="Legalitas HIMPUH" class="h-5 object-contain" />&nbsp;HIMPUH Artikel
+                        <img src="{{ asset('storage/uploads/certifications/himpuh.png') }}" alt="Legalitas HIMPUH"
+                            class="h-5 object-contain" />&nbsp;HIMPUH Artikel
                     </a>
                     <a href="{{ route('fe.activities.article') }}"
                         class="text-sm {{ request()->routeIs('fe.activities.article') ? 'text-emerald-600' : 'text-white' }}">

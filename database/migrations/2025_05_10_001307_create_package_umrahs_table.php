@@ -15,13 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('brochure'); // Image filename
-            $table->string('embarkation'); // Keberangkatan
+            $table->date('embarkation'); // Keberangkatan
             $table->string('starting_price'); // Harga Mulai
             $table->text('detail_package'); // HTML content
             $table->text('incl_package')->nullable(); // HTML content
             $table->text('excl_package')->nullable(); // HTML content
             $table->text('incl_equipment')->nullable(); // HTML content
-            $table->tinyInteger('sort_order')->default(0);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

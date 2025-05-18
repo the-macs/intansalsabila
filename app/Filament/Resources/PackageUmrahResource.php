@@ -43,22 +43,18 @@ class PackageUmrahResource extends Resource
                             ->imageEditor()
                             ->required(),
 
-                        Forms\Components\TextInput::make('embarkation')
+                        Forms\Components\DatePicker::make('embarkation')
                             ->label('Keberangkatan')
                             ->required()
-                            ->maxLength(255),
+                            ->format('Ymd') // This sets the display format for the picker
+                            ->displayFormat('d F Y') // Optional: how it looks in the UI
+                            ->native(false) // Use flatpickr UI instead of native date picker
+                            ->closeOnDateSelection(true),
 
                         Forms\Components\TextInput::make('starting_price')
                             ->label('Harga Mulai')
                             ->required()
                             ->maxLength(255),
-
-                        Forms\Components\TextInput::make('sort_order')
-                            ->label('Sort Order (Diurutkan dari terbesar)')
-                            ->numeric()
-                            ->default(function () {
-                                return (PackageUmrah::max('sort_order') ?? 0) + 1;
-                            }),
 
                         Forms\Components\Toggle::make('is_active')
                             ->default(true),
@@ -100,14 +96,18 @@ class PackageUmrahResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
 
+                Tables\Columns\TextColumn::make('embarkation')
+                    ->label('Embarkation Date')
+                    ->searchable()
+                    ->formatStateUsing(function ($state) {
+                        return Carbon::parse($state)->translatedFormat('d F Y'); // e.g., 10 Desember 2025
+                    }),
+
                 Tables\Columns\TextColumn::make('starting_price')
                     ->label('Price'),
 
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),
-
-                Tables\Columns\TextColumn::make('sort_order')
-                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -127,7 +127,7 @@ class PackageUmrahResource extends Resource
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ])
-            ->defaultSort('sort_order', 'asc');
+            ->defaultSort('embarkation', 'desc');
     }
 
     public static function getRelations(): array
@@ -144,5 +144,11 @@ class PackageUmrahResource extends Resource
             'create' => Pages\CreatePackageUmrah::route('/create'),
             'edit' => Pages\EditPackageUmrah::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()
+            ->orderBy('embarkation', 'desc');
     }
 }

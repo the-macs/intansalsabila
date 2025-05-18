@@ -12,4 +12,13 @@ class PackageUmrah extends Model
      * @var array
      */
     protected $guarded = [];
+
+    /**
+     * Cast property
+     *
+     * @var array
+     */
+    protected $casts = [
+        'embarkation' => 'date:Ymd',
+    ];
 }

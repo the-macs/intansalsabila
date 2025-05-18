@@ -27,7 +27,8 @@
                     <div class="w-full md:w-3/5 space-y-4">
                         <h2 class="text-3xl font-bold text-gray-800">{{ $u_pack['title'] }}</h2>
 
-                        <p class="text-lg text-gray-600">Keberangkatan : {{ $u_pack['embarkation'] }}</p>
+                        <p class="text-lg text-gray-600">Keberangkatan :
+                            {{ Carbon\Carbon::parse($u_pack['embarkation'])->locale('id')->translatedFormat('d F Y') }}</p>
 
                         <h2 class="text-2xl font-bold text-primary-600 mb-3">Harga Mulai : {{ $u_pack['starting_price'] }}
                         </h2>
@@ -109,9 +110,6 @@
                 </div>
             </section>
         @endforeach
-
         <!-- Packages Section -->
-
-
     </div>
 @endsection

@@ -24,7 +24,7 @@
                     @foreach ($galleries as $gallery)
                         <div class="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
                             <div class="relative h-48">
-                                <img src="{{ asset('storage/' . $gallery->images[0]) }}" alt="{{ $gallery->title }}"
+                                <img src="{{ asset('storage/' . $gallery->media->images[0]) }}" alt="{{ $gallery->title }}"
                                     class="h-full w-full object-cover transition-transform duration-300 hover:scale-105">
                             </div>
                             <div class="p-6">
@@ -43,6 +43,10 @@
                                     <div class="flex items-center gap-2">
                                         <i class="fas fa-image text-emerald-600 w-4"></i>
                                         <span>{{ $gallery->imageCount }} photos</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="fas fa-video text-emerald-600 w-4"></i>
+                                        <span>{{ $gallery->videoCount }} videos</span>
                                     </div>
                                 </div>
 

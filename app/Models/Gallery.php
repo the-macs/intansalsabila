@@ -20,7 +20,7 @@ class Gallery extends Model
      * @var array
      */
     protected $casts = [
-        'images' => AsArrayObject::class,
+        'media' => AsArrayObject::class,
     ];
 
     /**
@@ -30,6 +30,24 @@ class Gallery extends Model
      */
     public function getImageCountAttribute()
     {
-        return count($this->images ?? []);
+        return count($this->media->images ?? []);
+    }
+
+    /**
+     * Accessor to get image count
+     *
+     * @return void
+     */
+    public function getVideoCountAttribute()
+    {
+        return count($this->media->videos ?? []);
+    }
+
+    /**
+     * Checking video or image
+     */
+    public function isVideo($file)
+    {
+        return preg_match('/\.(mp4|mov|avi)$/i', $file);
     }
 }

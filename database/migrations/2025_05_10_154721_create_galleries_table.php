@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->date('date');
             $table->string('location');
-            $table->json('images')->nullable();
+            $table->json('media')->nullable();
             $table->timestamps();
         });
     }

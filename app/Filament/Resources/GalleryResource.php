@@ -60,10 +60,23 @@ class GalleryResource extends Resource
 
                 Forms\Components\Section::make('Gallery Images')
                     ->schema([
-                        Forms\Components\FileUpload::make('images')
-                            ->directory(function ($get) {
-                                return 'uploads/galleries/' . $get('slug');
-                            })
+                        // Forms\Components\FileUpload::make('images')
+                        //     ->directory(function ($get) {
+                        //         return 'uploads/galleries/' . $get('slug');
+                        //     })
+                        //     ->image()
+                        //     ->multiple()
+                        //     ->reorderable()
+                        //     ->appendFiles()
+                        //     ->downloadable()
+                        //     ->openable()
+                        //     ->preserveFilenames()
+                        //     ->panelLayout('grid')
+                        //     ->helperText('Upload multiple images for this gallery')
+
+                        Forms\Components\FileUpload::make('media.images')
+                            ->label('Upload Images')
+                            ->directory(fn($get) => 'uploads/galleries/' . $get('slug') . '/images')
                             ->image()
                             ->multiple()
                             ->reorderable()
@@ -72,7 +85,19 @@ class GalleryResource extends Resource
                             ->openable()
                             ->preserveFilenames()
                             ->panelLayout('grid')
-                            ->helperText('Upload multiple images for this gallery')
+                            ->helperText('Upload multiple images for this gallery'),
+
+                        Forms\Components\FileUpload::make('media.videos')
+                            ->label('Upload Videos')
+                            ->directory(fn($get) => 'uploads/galleries/' . $get('slug') . '/videos')
+                            ->acceptedFileTypes(['video/mp4', 'video/avi', 'video/mov'])
+                            ->multiple()
+                            ->appendFiles()
+                            ->downloadable()
+                            ->openable()
+                            ->preserveFilenames()
+                            ->panelLayout('grid')
+                            ->helperText('Upload multiple videos for this gallery'),
                     ])
             ]);
     }
